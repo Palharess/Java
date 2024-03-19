@@ -18,7 +18,7 @@ public class DAO<E>  {
         try {
             emf = Persistence.createEntityManagerFactory("default");
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
     public DAO(){
@@ -62,5 +62,12 @@ public class DAO<E>  {
     }
     public void fechar(){
         em.close();
+    }
+    public List<E> consultar(String nomeConsulta, Object... params){
+        TypedQuery<E> query = em.createNamedQuery(nomeConsulta, classe);
+        for (int i = 0; i < params.length; i+=2){
+            query.setParameter(params[i].toString(), params[i + 1]);
+        }
+        return query.getResultList();
     }
 }

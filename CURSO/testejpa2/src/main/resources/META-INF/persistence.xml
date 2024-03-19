@@ -4,6 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
     <persistence-unit name="default">
+        <mapping-file>META-INF/consultas.xml</mapping-file>
         <class>entity.PessoasEntity</class>
         <properties>
             <!-- Configuração para atualizar automaticamente o esquema do banco de dados -->
