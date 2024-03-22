@@ -11,4 +11,4 @@ public class ObterFilmes {
         List<Filme> lista = dao.consultar("filmesNotasMaiorQue", "nota", 9.7);
         for(Filme filme:lista) System.out.println(filme.getNome());
     }
-}                                                                                                                                                                                                                                                                                                                                                                           1
+}
